@@ -1,0 +1,18 @@
+﻿<Window x:Name="Deschide" x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,0,-16">
+        <Button x:Name="but_deschide" Content="Deschide usa" HorizontalAlignment="Left" Margin="580,66,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_deschide_Click"/>
+        <Button x:Name="but_inchide" Content="Inchide usa" HorizontalAlignment="Left" Margin="580,182,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_inchide_Click"/>
+        <Button x:Name="but_pornire" Content="Pornire" HorizontalAlignment="Left" Margin="580,329,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_pornire_Click"/>
+        <Label x:Name="lab_usa" Content="Usa inchisa!" HorizontalAlignment="Left" Margin="101,66,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+        <Label x:Name="lab_gateste" Content="Gateste OFF" HorizontalAlignment="Left" Margin="101,182,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+        <Label x:Name="lab_timer" Content="Timer" HorizontalAlignment="Left" Margin="101,329,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+
+    </Grid>
+</Window>
