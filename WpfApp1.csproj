@@ -7,4 +7,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\PixelifySans-Bold.ttf" />
+    <None Remove="images\Closed.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\PixelifySans-Bold.ttf" />
+    <Resource Include="images\Closed.png" />
+  </ItemGroup>
+
 </Project>

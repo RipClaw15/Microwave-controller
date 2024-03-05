@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace WpfApp1
@@ -19,7 +21,7 @@ namespace WpfApp1
             c = new Context(Stare_usa_inchisa.Instance);
             Subscribe(c);
 
-            Ticks();
+            
         }
         
         public virtual void Subscribe(IObservable<Stare> context)
@@ -31,21 +33,6 @@ namespace WpfApp1
             un_subscriber.Dispose();
         }
 
-
-        async void Ticks()
-        {
-            while (true)
-            {
-                await Task.Delay(1000);
-
-                
-                if (isRunning)
-                {
-                    
-                    c.Tick_ceas();
-                }
-            }
-        }
 
 
         private void but_deschide_Click(object sender, RoutedEventArgs e)
@@ -62,9 +49,13 @@ namespace WpfApp1
 
         private void but_pornire_Click(object sender, RoutedEventArgs e)
         {
+            
             c.Gateste();
             
+
         }
+
+       
 
 
         public void OnCompleted()
@@ -106,6 +97,7 @@ namespace WpfApp1
         public void Set_gateste_ON()
         {
             lab_gateste.Content = "Gateste ON";
+            window.Fill = Brushes.Orange;
         }
 
         public void Set_timp_ramas()
@@ -115,12 +107,60 @@ namespace WpfApp1
 
         public void Set_usa_deschisa()
         {
-            lab_usa.Content = "Usa Deschisa";
+            lab_usa.Content = "Door opened";
+            foreach (var shape in doorGroup.Children)
+            {
+                if (shape is Shape)
+                {
+                    ((Shape)shape).Fill = Brushes.White; // Change Fill color to Orange
+                    ((Shape)shape).Stroke = Brushes.Black; // Change Stroke color to Red
+                                                         // Adjust other properties as needed
+                }
+            }
+            open_door_front.Fill = Brushes.LightGray;
+            window_front.Fill = Brushes.Gray;
+            handle_front.Fill = Brushes.Black;
+            handle_front1.Fill = Brushes.Black;
+            handle_front2.Fill = Brushes.Black;
+            handle.Fill = Brushes.Transparent;
+            handle.Stroke = Brushes.Transparent;
+            window.Fill = Brushes.Transparent;
+            window.Stroke = Brushes.Transparent;
+            inside.Fill = Brushes.LightGray;
+            inside_small.Fill = Brushes.Gray;
+            inside_small.Stroke = Brushes.Black;
+            inside_plate.Fill = Brushes.Gray;
+            inside_plate.Stroke = Brushes.Black;
+            line_4.Stroke = Brushes.Black;
+            line_2.Stroke = Brushes.Black;
+            line_1.Stroke = Brushes.Black;
         }
 
         public void Set_usa_inchisa()
         {
-            lab_usa.Content = "Usa Inchisa";
+            lab_usa.Content = "Door closed";
+            window.Fill = Brushes.Gray;
+            foreach (var shape in doorGroup.Children)
+            {
+                if (shape is Shape)
+                {
+                    ((Shape)shape).Fill = Brushes.Transparent; 
+                    ((Shape)shape).Stroke = Brushes.Transparent; 
+                                                                 
+                }
+            }
+            window.Fill = Brushes.Gray;
+            window.Stroke = Brushes.Black;
+            handle.Fill = Brushes.Black;
+            handle.Stroke = Brushes.Black;
+            inside.Fill = Brushes.White;
+            inside_plate.Fill = Brushes.Transparent;
+            inside_plate.Stroke = Brushes.Transparent;
+            inside_small.Fill = Brushes.Transparent;
+            inside_small.Stroke = Brushes.Transparent;
+            line_4.Stroke = Brushes.Transparent;
+            line_2.Stroke = Brushes.Transparent;
+            line_1.Stroke = Brushes.Transparent;
         }
 
         public void Set_timer(string content)
@@ -130,6 +170,7 @@ namespace WpfApp1
             {
                 lab_timer.Content = content;
             });
+            set_timer.Content = "Set_timer";
         }
 
     }

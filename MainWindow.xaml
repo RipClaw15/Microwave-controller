@@ -5,14 +5,145 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Microwave" Height="600" Width="1024">
     <Grid Margin="0,0,0,-16">
-        <Button x:Name="but_deschide" Content="Deschide usa" HorizontalAlignment="Left" Margin="580,66,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_deschide_Click"/>
-        <Button x:Name="but_inchide" Content="Inchide usa" HorizontalAlignment="Left" Margin="580,182,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_inchide_Click"/>
-        <Button x:Name="but_pornire" Content="Pornire" HorizontalAlignment="Left" Margin="580,329,0,0" VerticalAlignment="Top" Height="66" Width="129" Click="but_pornire_Click"/>
-        <Label x:Name="lab_usa" Content="Usa inchisa!" HorizontalAlignment="Left" Margin="101,66,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
-        <Label x:Name="lab_gateste" Content="Gateste OFF" HorizontalAlignment="Left" Margin="101,182,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
-        <Label x:Name="lab_timer" Content="Timer" HorizontalAlignment="Left" Margin="101,329,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+
+        <!-- Door -->
+
+        <Rectangle x:Name="door_shape" Fill="white" Stroke="black" StrokeThickness="2" Margin="96,48,259,123" />
+
+        <!-- Inside -->
+        <Rectangle x:Name="inside" Fill="white" Stroke="Transparent" StrokeThickness="2" Margin="96,48,259,123" />
+
+        <!-- Controll Panel -->
+        <Rectangle x:Name="controll" Fill="White" Width="200" Stroke="Black" StrokeThickness="2" HorizontalAlignment="Right" Margin="0,125,34,158" />
+
+        <!-- Timer -->
+        <Rectangle x:Name="timer" Fill="Black" Width="160" Height="100" HorizontalAlignment="Right" Margin="0,10,54,490" />
+
+        <!-- Handle -->
+        <Rectangle x:Name="handle" Fill="Black" Width="250" Stroke="Black" StrokeThickness="2" HorizontalAlignment="Left" Margin="580,238,0,290" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="window" Fill="Gray" Stroke="Black" StrokeThickness="2" Margin="123,65,359,139" />
+        <Button x:Name="but_deschide" Content="Open door" HorizontalAlignment="Left" Margin="845,152,0,0" VerticalAlignment="Top" Height="66" Width="90" Click="but_deschide_Click"/>
+        <Button x:Name="but_inchide" Content="Close door" HorizontalAlignment="Left" Margin="845,242,0,0" VerticalAlignment="Top" Height="66" Width="90" Click="but_inchide_Click"/>
+        <Button x:Name="but_pornire" Content="Start" HorizontalAlignment="Left" Margin="826,339,0,0" VerticalAlignment="Top" Height="66" Width="128" Click="but_pornire_Click"/>
+        <Label x:Name="lab_usa" Content="Door closed!" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+        <Label x:Name="lab_gateste" Content="Cooking OFF" HorizontalAlignment="Left" Margin="636,10,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+        <Label x:Name="set_timer" Content="set timer" HorizontalAlignment="Left" Margin="810,492,0,0" VerticalAlignment="Top" Height="66" Width="129"/>
+        <Label x:Name="lab_timer" FontSize="60" Content="    30" FontFamily="Pixelify Sans"  HorizontalAlignment="Left" Margin="800,10,0,0" Foreground="Green" VerticalAlignment="Top" Height="66" Width="160"/>
+        <Grid x:Name="doorGroup">
+            <Rectangle x:Name="open_door_front" Fill="Transparent" Width="401" Stroke="Transparent" StrokeThickness="2" HorizontalAlignment="Left" Margin="-53,346,0,202" RenderTransformOrigin="0.5,0.5" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="open_door_front_Copy" Fill="Transparent" Width="110" Stroke="Transparent" StrokeThickness="2" HorizontalAlignment="Left" Margin="-25,92,0,458" RenderTransformOrigin="0.454,0.465" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-30.8"/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="88.486" Y="-3.332"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Polygon x:Name="door_front" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="71,55,814,-68">
+                <Polygon.Points>
+                    <Point X="0" Y="0"/>
+                    <Point X="62" Y="105"/>
+                    <Point X="62" Y="510"/>
+                    <Point X="0" Y="400"/>
+                </Polygon.Points>
+            </Polygon>
+            <Polygon x:Name="window_front" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="80,91,-80,-91">
+                <Polygon.Points>
+                    <Point X="-2" Y="20"/>
+                    <Point X="35" Y="80"/>
+                    <Point X="35" Y="420"/>
+                    <Point X="-2" Y="360"/>
+                </Polygon.Points>
+            </Polygon>
+            <Rectangle x:Name="handle_front" Fill="Transparent" Width="366" Stroke="Transparent" StrokeThickness="2" HorizontalAlignment="Left" Margin="-85,297,0,257" RenderTransformOrigin="0.5,0.5" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="handle_front1" Fill="Transparent" Width="56" Stroke="Transparent" StrokeThickness="2" HorizontalAlignment="Left" Margin="86,208,0,341" RenderTransformOrigin="0.5,0.5" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="handle_front2" Fill="Transparent" Width="56" Stroke="Transparent" StrokeThickness="2" HorizontalAlignment="Left" Margin="84,428,0,116" RenderTransformOrigin="0.5,0.5" >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+        <Rectangle x:Name="inside_small" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="162,85,324,247" />
+        <Ellipse x:Name="inside_plate" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="199,358,359,158"/>
+        <Line x:Name="line_4" X1="0" Y1="100" X2="200" Y2="100" Stroke="Transparent" StrokeThickness="2" Margin="670,342,196,127" RenderTransformOrigin="0.5,0.5">
+            
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="62.673"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+        <Line x:Name="line_2" X1="0" Y1="100" X2="200" Y2="100" Stroke="Transparent" StrokeThickness="2" Margin="645,-56,286,525" RenderTransformOrigin="0.5,0.5">
+
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-29.951"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+        <Line x:Name="line_1" X1="0" Y1="100" X2="200" Y2="100" Stroke="Transparent" StrokeThickness="2" Margin="106,5,825,464" RenderTransformOrigin="0.5,0.5">
+
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="29.951"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
 
     </Grid>
 </Window>

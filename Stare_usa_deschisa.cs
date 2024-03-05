@@ -29,6 +29,8 @@ namespace WpfApp1
 
         public override void Inchide_usa(Context context)
         {
+            
+
             //schimb stare
             context.Stare_curenta = Stare_usa_inchisa.Instance;
             //notifica observatorii  

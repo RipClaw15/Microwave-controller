@@ -21,13 +21,13 @@ namespace WpfApp1
         public void deschide_usa()
         {
 
-            if (stare == Stare.STARE_USA_INCHISA) { lab_usa.Content = "Usa deschisa!"; }
+            if (stare == Stare.STARE_USA_INCHISA) { lab_usa.Content = "Door opened!"; }
 
         }
 
         public void inchide_usa()
         {
-            if (stare == Stare.STARE_USA_DESCHISA) { lab_usa.Content = "Usa inchisa!"; }
+            if (stare == Stare.STARE_USA_DESCHISA) { lab_usa.Content = "Door closed!"; }
         }
 
 
